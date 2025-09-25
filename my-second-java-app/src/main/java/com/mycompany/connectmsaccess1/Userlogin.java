@@ -64,7 +64,7 @@ public class Userlogin extends javax.swing.JFrame {
         txt_password.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jPanel1.add(txt_password, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 130, 180, -1));
 
-        jButton1.setBackground(new java.awt.Color(51, 153, 255));
+        jButton1.setBackground(new java.awt.Color(102, 204, 255));
         jButton1.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jButton1.setText("LOGIN");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
