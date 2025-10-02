@@ -26,16 +26,16 @@ public class MainMenu extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jLabel2 = new javax.swing.JLabel();
+        lblname = new javax.swing.JLabel();
         lbl_name = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel2.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
-        jLabel2.setForeground(new java.awt.Color(0, 204, 255));
-        jLabel2.setText("WELCOME TO THE WORLD! :)");
-        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 50, -1, -1));
+        lblname.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
+        lblname.setForeground(new java.awt.Color(0, 204, 255));
+        lblname.setText("WELCOME TO THE WORLD! :)");
+        getContentPane().add(lblname, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 50, -1, -1));
 
         lbl_name.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
         lbl_name.setForeground(new java.awt.Color(255, 102, 102));
@@ -81,7 +81,7 @@ public class MainMenu extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel jLabel2;
     public static javax.swing.JLabel lbl_name;
+    private javax.swing.JLabel lblname;
     // End of variables declaration//GEN-END:variables
 }

@@ -20,8 +20,7 @@ public class Userlogin extends javax.swing.JFrame {
     Connection conn;
     PreparedStatement pst;
     ResultSet rs;
-  
-    
+
     public Userlogin() throws SQLException {
         initComponents();
         conn = ConnectMsAccess1.conn();
@@ -41,7 +40,7 @@ public class Userlogin extends javax.swing.JFrame {
         jLabel2 = new javax.swing.JLabel();
         txt_username = new javax.swing.JTextField();
         txt_password = new javax.swing.JPasswordField();
-        jButton1 = new javax.swing.JButton();
+        btn_login = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -59,20 +58,25 @@ public class Userlogin extends javax.swing.JFrame {
         jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 130, -1, -1));
 
         txt_username.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        txt_username.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txt_usernameActionPerformed(evt);
+            }
+        });
         jPanel1.add(txt_username, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 80, 180, -1));
 
         txt_password.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jPanel1.add(txt_password, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 130, 180, -1));
 
-        jButton1.setBackground(new java.awt.Color(102, 204, 255));
-        jButton1.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        jButton1.setText("LOGIN");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        btn_login.setBackground(new java.awt.Color(102, 204, 255));
+        btn_login.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        btn_login.setText("LOGIN");
+        btn_login.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                btn_loginActionPerformed(evt);
             }
         });
-        jPanel1.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 180, -1, -1));
+        jPanel1.add(btn_login, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 180, -1, -1));
 
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 430, 270));
 
@@ -80,29 +84,31 @@ public class Userlogin extends javax.swing.JFrame {
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void btn_loginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_loginActionPerformed
         String username = txt_username.getText();
         char[] pass = txt_password.getPassword();
         String userpassword = String.valueOf(pass);
-        
-        try{
+        try {
             String sqlquery = "SELECT * FROM userlogin WHERE user_name = ? and user_password = ?";
             pst = conn.prepareCall(sqlquery);
             pst.setString(1, username);
             pst.setString(2, userpassword);
             rs = pst.executeQuery();
-            if(!rs.next()){
+            if (!rs.next()) {
                 JOptionPane.showMessageDialog(null, "Username and Password is Incorrect");
-            }else{
+            } else {
                 JOptionPane.showMessageDialog(null, "Login Succesfully");
                 new MainMenu().show();
-                MainMenu.lbl_name.setText(rs.getString(4)+" "+rs.getString(6));
+                MainMenu.lbl_name.setText(rs.getString(4) + " " + rs.getString(6));
             }
-            
-        }catch(SQLException e){
+        } catch (SQLException e) {
             JOptionPane.showMessageDialog(null, e);
         }
-    }//GEN-LAST:event_jButton1ActionPerformed
+    }//GEN-LAST:event_btn_loginActionPerformed
+
+    private void txt_usernameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txt_usernameActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txt_usernameActionPerformed
 
     /**
      * @param args the command line arguments
@@ -132,11 +138,10 @@ public class Userlogin extends javax.swing.JFrame {
         //</editor-fold>
 
         /* Create and display the form */
-        
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
+    private javax.swing.JButton btn_login;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JPanel jPanel1;
