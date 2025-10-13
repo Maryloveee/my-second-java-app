@@ -17,7 +17,7 @@ public class ConnectMsAccess1 {
     public static Connection conn()  {
 
         try {
-            String url = "jdbc:ucanaccess://C://Users//Administrator//Documents//myDB";
+            String url = "jdbc:ucanaccess://C:/Users/Administrator/Documents/myDB";
             Connection conn = DriverManager.getConnection(url);
             return conn;
         } catch (SQLException e) {
