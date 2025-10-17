@@ -50,7 +50,7 @@ public class NewJFrame extends javax.swing.JFrame {
         jLabel1.setText("LOGIN FORM");
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 20, -1, -1));
 
-        jPanel1.setBackground(new java.awt.Color(255, 153, 153));
+        jPanel1.setBackground(new java.awt.Color(153, 153, 153));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel2.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
@@ -83,7 +83,7 @@ public class NewJFrame extends javax.swing.JFrame {
         char[] pass = txt_password.getPassword();
         String userpassword = String.valueOf(pass);
         try {
-            String sqlquery = "SELECT * FROM userlogin WHERE user_name = ? and user_password = ?";
+            String sqlquery = "SELECT * FROM user WHERE user_name = ? and user_password = ?";
             pst = conn.prepareCall(sqlquery);
             pst.setString(1, username);
             pst.setString(2, userpassword);

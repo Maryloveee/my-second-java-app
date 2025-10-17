@@ -38,7 +38,7 @@ public class MainMenu extends javax.swing.JFrame {
         getContentPane().add(lblname, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 50, -1, -1));
 
         lbl_name.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
-        lbl_name.setForeground(new java.awt.Color(255, 102, 102));
+        lbl_name.setForeground(new java.awt.Color(153, 204, 255));
         getContentPane().add(lbl_name, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 110, 350, 40));
 
         pack();
